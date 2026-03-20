@@ -1,3 +1,7 @@
+html {
+    scroll-padding-top: 100px;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -22,7 +26,9 @@ body{
 }
 
 .sidebar{
-    background-color: #2a2a2a;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
     height: 90vh ;
     border: 1px solid #3a3a3a;
     border-radius: 16px;
@@ -119,10 +125,16 @@ body{
 /* main content */
  /* navigation */
 #navigation{
-    padding: 20px 40px;
-    border-bottom: 2px solid #3a3a3a;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+    padding: 15px 40px;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    background-color: rgba(42, 42, 42, 0.9);
+    backdrop-filter: blur(12px);
+    margin-bottom: 25px;
+    margin-top: -10px; /* Moves it slightly upwards, leaving a 15px gap inside the 25px container padding */
+    position: sticky;
+    top: 55px; /* Matches exact vertical distance from screen top (40px + 25px - 10px) */
+    z-index: 100;
 }
 
 nav{

@@ -179,5 +179,37 @@
         </div>
 
     </div>
+
+    <script>
+        const sections = document.querySelectorAll("#about, #skills, #education, #portfolio");
+        const navLinks = document.querySelectorAll("nav a");
+
+        // Make "About" scroll to the absolute top of the page
+        navLinks.forEach(link => {
+            link.addEventListener("click", function(e) {
+                if (this.getAttribute("href") === "#about") {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+            });
+        });
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
